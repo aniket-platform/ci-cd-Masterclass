@@ -23,7 +23,7 @@ jobs:
           cache: maven
       - name: Build Jar
         run: |
-         cd java-app
+         cd ci-cid-masterclass
          mvn clean package -DskipTests
 
       - name: Building Docker Image
