@@ -21,9 +21,10 @@ jobs:
           distribution: temurin
           java-version: 21
           cache: maven
-
       - name: Build Jar
-        run: mvn clean package -DskipTests
+        run: |
+         cd java-app
+         mvn clean package -DskipTests
 
       - name: Building Docker Image
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest .
